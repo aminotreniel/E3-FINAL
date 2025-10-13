@@ -1,0 +1,11 @@
+Model Information:
+* title:	Lab Room
+* source:	https://sketchfab.com/3d-models/lab-room-99a27f429f5c48f78198a4da58419afe
+* author:	purbosky (https://sketchfab.com/purbosky)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Lab Room" (https://sketchfab.com/3d-models/lab-room-99a27f429f5c48f78198a4da58419afe) by purbosky (https://sketchfab.com/purbosky) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)

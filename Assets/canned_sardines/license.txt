@@ -1,0 +1,11 @@
+Model Information:
+* title:	Canned Sardines
+* source:	https://sketchfab.com/3d-models/canned-sardines-b6774c2aeb7141f891f5ec2ebeb37a46
+* author:	ldgc (https://sketchfab.com/ldgc)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Canned Sardines" (https://sketchfab.com/3d-models/canned-sardines-b6774c2aeb7141f891f5ec2ebeb37a46) by ldgc (https://sketchfab.com/ldgc) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Low Poly Key
+* source:	https://sketchfab.com/3d-models/low-poly-key-ca5b38659d6a49428de0aaa5abf2f3f6
+* author:	RealityForge (https://sketchfab.com/shaunansari)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Low Poly Key" (https://sketchfab.com/3d-models/low-poly-key-ca5b38659d6a49428de0aaa5abf2f3f6) by RealityForge (https://sketchfab.com/shaunansari) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Large Sci-Fi Vat
+* source:	https://sketchfab.com/3d-models/large-sci-fi-vat-e684c968e2c340679945651cccf600da
+* author:	ChickenHatMan (https://sketchfab.com/ChickenHatMan)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Large Sci-Fi Vat" (https://sketchfab.com/3d-models/large-sci-fi-vat-e684c968e2c340679945651cccf600da) by ChickenHatMan (https://sketchfab.com/ChickenHatMan) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
