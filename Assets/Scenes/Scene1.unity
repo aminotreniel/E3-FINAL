@@ -4813,7 +4813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enableFog: 1
-  fogColor: {r: 0.4, g: 0.5, b: 0.45, a: 1}
+  fogColor: {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 0.003921569}
   fogMode: 2
   fogStartDistance: 5
   fogEndDistance: 50
@@ -5904,6 +5904,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 192435196}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &192510531 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1208051391062474595, guid: 7f740e7c6da5a1d408066ed2e3be4b54,
+    type: 3}
+  m_PrefabInstance: {fileID: 1092282746}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &192510535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192510531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa7586e31df45a34a830d812dbbb929d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flickerColor: {r: 1, g: 0, b: 0, a: 1}
+  minIntensity: 0.68
+  maxIntensity: 4.44
+  lightRange: 5
+  enableShadows: 1
+  flickerMode: 2
+  flickerSpeed: 0.15
+  blinkInterval: 0.2
+  addRandomVariation: 1
+  randomVariation: 0.3
+  alarmMode: 0
+  alarmSpeed: 2
 --- !u!1001 &192663234
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14824,6 +14854,62 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4f5aeff5b2e5e448a35f860efea9db5, type: 3}
+--- !u!1 &521668819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 521668821}
+  - component: {fileID: 521668820}
+  m_Layer: 10
+  m_Name: Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &521668820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521668819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa7586e31df45a34a830d812dbbb929d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flickerColor: {r: 1, g: 0.1, b: 0.05, a: 1}
+  minIntensity: 0.5
+  maxIntensity: 3
+  lightRange: 10
+  enableShadows: 1
+  flickerMode: 0
+  flickerSpeed: 0.15
+  blinkInterval: 0.2
+  addRandomVariation: 1
+  randomVariation: 0.3
+  alarmMode: 0
+  alarmSpeed: 2
+--- !u!4 &521668821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521668819}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.369, y: 2.52, z: 4.178}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &522307544 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6689036041284674117, guid: 77f059fc6c53aaa429fc7287dcce075d,
@@ -21191,15 +21277,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7586e31df45a34a830d812dbbb929d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetLight: {fileID: 767361733}
   flickerColor: {r: 1, g: 0, b: 0, a: 1}
   minIntensity: 0.3
   maxIntensity: 1.5
-  useHardBlink: 1
+  lightRange: 10
+  enableShadows: 1
+  flickerMode: 0
   flickerSpeed: 0.1
   blinkInterval: 0.1
-  randomize: 1
-  randomRange: 0.2
+  addRandomVariation: 1
+  randomVariation: 0.3
+  alarmMode: 0
+  alarmSpeed: 2
 --- !u!108 &767361733
 Light:
   m_ObjectHideFlags: 0
@@ -33246,7 +33335,11 @@ PrefabInstance:
     - {fileID: 6978859340457879275, guid: 7f740e7c6da5a1d408066ed2e3be4b54, type: 3}
     - {fileID: 2307581484253499386, guid: 7f740e7c6da5a1d408066ed2e3be4b54, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1208051391062474595, guid: 7f740e7c6da5a1d408066ed2e3be4b54,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 192510535}
   m_SourcePrefab: {fileID: 100100000, guid: 7f740e7c6da5a1d408066ed2e3be4b54, type: 3}
 --- !u!4 &1096148659 stripped
 Transform:
@@ -42482,15 +42575,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7586e31df45a34a830d812dbbb929d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetLight: {fileID: 0}
   flickerColor: {r: 1, g: 0, b: 0, a: 1}
   minIntensity: 0.3
   maxIntensity: 1.5
-  useHardBlink: 1
+  lightRange: 10
+  enableShadows: 1
+  flickerMode: 0
   flickerSpeed: 0.1
   blinkInterval: 0.1
-  randomize: 1
-  randomRange: 0.2
+  addRandomVariation: 1
+  randomVariation: 0.3
+  alarmMode: 0
+  alarmSpeed: 2
 --- !u!1001 &1377185901
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63022,6 +63118,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 836103645}
+  - {fileID: 521668821}
   - {fileID: 151648159}
   - {fileID: 903931211}
   - {fileID: 1565678729}
