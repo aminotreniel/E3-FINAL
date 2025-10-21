@@ -11,13 +11,13 @@ public class HealthPickup : MonoBehaviour
 
         if (playerHealth != null)
         {
+            // Calculate the actual heal amount (don't exceed max health)
+            float actualHeal = Mathf.Min(healAmount, playerHealth.maxHealth - playerHealth.currentHealth);
+            
             // Increase player health (but clamp to max)
             playerHealth.currentHealth = Mathf.Min(playerHealth.currentHealth + healAmount, playerHealth.maxHealth);
 
-            if (playerHealth.healthBarSlider != null)
-                playerHealth.healthBarSlider.value = playerHealth.currentHealth;
-
-            Debug.Log("Picked up health! Current Health: " + playerHealth.currentHealth);
+            Debug.Log("Picked up health! Healed: " + actualHeal + " | Current Health: " + playerHealth.currentHealth);
 
             Destroy(gameObject); // remove pickup
         }

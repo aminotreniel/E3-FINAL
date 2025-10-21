@@ -117,7 +117,7 @@ public class PlayerInventory : MonoBehaviour
             if (playerHealth != null)
             {
                 playerHealth.currentHealth = Mathf.Min(playerHealth.currentHealth + 30f, playerHealth.maxHealth);
-                if (playerHealth.healthBarSlider != null) playerHealth.healthBarSlider.value = playerHealth.currentHealth;
+                // Health bar updates automatically in PlayerHealth
             }
             medkitCount--;
         }

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class ObjectiveTask
@@ -29,12 +30,7 @@ public class ObjectiveGroup
 
 public class ObjectiveManager : MonoBehaviour
 {
-    [Header("UI")]
-    [Tooltip("Title shown above the objective list.")]
-    public TextMeshProUGUI titleText;
-
-    [Tooltip("Body text where the checklist (checkbox + task lines) will be rendered.")]
-    public TextMeshProUGUI bodyText;
+    public static ObjectiveManager Instance; // Singleton for global access
 
     [Header("Objectives")]
     [Tooltip("Editable list of tasks. The order determines display and progression.")]
@@ -51,8 +47,38 @@ public class ObjectiveManager : MonoBehaviour
     [Tooltip("Use ASCII checkboxes ([ ] / [x]) instead of Unicode symbols. Enable if your font doesn't show the Unicode boxes.")]
     public bool useAsciiCheckboxes = true;
 
+    [Header("Score Settings")]
+    [Tooltip("Enable score tracking and display")]
+    public bool enableScore = true;
+
+    // UI Elements (created automatically)
+    private Canvas objectiveCanvas;
+    private TextMeshProUGUI titleText;
+    private TextMeshProUGUI bodyText;
+    private TextMeshProUGUI scoreText;
+    
+    // Score tracking
+    private int score = 0;
+
+    void Awake()
+    {
+        // Singleton pattern
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+    }
+
     void Start()
     {
+        // Create UI first
+        CreateObjectiveUI();
+        
         // Migrate legacy flat `tasks` into groups if no groups were set up.
         if ((groups == null || groups.Count == 0) && tasks != null && tasks.Count > 0)
         {
@@ -73,21 +99,128 @@ public class ObjectiveManager : MonoBehaviour
     // Index of the currently visible group/batch
     private int currentGroupIndex = -1;
 
+    private void CreateObjectiveUI()
+    {
+        // Find or create canvas
+        objectiveCanvas = FindFirstObjectByType<Canvas>();
+        if (objectiveCanvas == null)
+        {
+            GameObject canvasObj = new GameObject("ObjectiveCanvas");
+            objectiveCanvas = canvasObj.AddComponent<Canvas>();
+            objectiveCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            objectiveCanvas.sortingOrder = 100;
+            canvasObj.AddComponent<CanvasScaler>();
+            canvasObj.AddComponent<GraphicRaycaster>();
+        }
+
+        // Create main container in upper right corner
+        GameObject containerObj = new GameObject("ObjectiveContainer");
+        containerObj.transform.SetParent(objectiveCanvas.transform, false);
+        RectTransform containerRect = containerObj.AddComponent<RectTransform>();
+        
+        // Position in top-right corner
+        containerRect.anchorMin = new Vector2(1f, 1f);
+        containerRect.anchorMax = new Vector2(1f, 1f);
+        containerRect.pivot = new Vector2(1f, 1f);
+        containerRect.anchoredPosition = new Vector2(-20f, -20f);
+        containerRect.sizeDelta = new Vector2(350f, 200f);
+
+        // Add background panel
+        Image bgPanel = containerObj.AddComponent<Image>();
+        bgPanel.color = new Color(0.1f, 0.1f, 0.12f, 0.85f); // Semi-transparent dark background
+        
+        // Add outline
+        var outline = containerObj.AddComponent<Outline>();
+        outline.effectColor = new Color(0.4f, 0.4f, 0.45f, 1f);
+        outline.effectDistance = new Vector2(2, 2);
+        
+        // Add shadow
+        var shadow = containerObj.AddComponent<Shadow>();
+        shadow.effectColor = new Color(0f, 0f, 0f, 0.7f);
+        shadow.effectDistance = new Vector2(3, -3);
+
+        // Create title text
+        GameObject titleObj = new GameObject("ObjectiveTitle");
+        titleObj.transform.SetParent(containerObj.transform, false);
+        titleText = titleObj.AddComponent<TextMeshProUGUI>();
+        titleText.text = "Main Objectives";
+        titleText.fontSize = 20;
+        titleText.fontStyle = FontStyles.Bold;
+        titleText.color = new Color(1f, 0.9f, 0.5f, 1f); // Gold color
+        titleText.alignment = TextAlignmentOptions.TopLeft;
+        
+        RectTransform titleRect = titleObj.GetComponent<RectTransform>();
+        titleRect.anchorMin = new Vector2(0f, 1f);
+        titleRect.anchorMax = new Vector2(1f, 1f);
+        titleRect.pivot = new Vector2(0.5f, 1f);
+        titleRect.anchoredPosition = new Vector2(0f, -10f);
+        titleRect.sizeDelta = new Vector2(-20f, 30f);
+        
+        // Add title outline
+        var titleOutline = titleObj.AddComponent<Outline>();
+        titleOutline.effectColor = Color.black;
+        titleOutline.effectDistance = new Vector2(1, 1);
+
+        // Create body text (objectives list)
+        GameObject bodyObj = new GameObject("ObjectiveBody");
+        bodyObj.transform.SetParent(containerObj.transform, false);
+        bodyText = bodyObj.AddComponent<TextMeshProUGUI>();
+        bodyText.text = "";
+        bodyText.fontSize = 16;
+        bodyText.color = Color.white;
+        bodyText.alignment = TextAlignmentOptions.TopLeft;
+        
+        RectTransform bodyRect = bodyObj.GetComponent<RectTransform>();
+        bodyRect.anchorMin = new Vector2(0f, 0f);
+        bodyRect.anchorMax = new Vector2(1f, 1f);
+        bodyRect.pivot = new Vector2(0f, 1f);
+        bodyRect.anchoredPosition = new Vector2(10f, -45f);
+        bodyRect.sizeDelta = new Vector2(-20f, -55f);
+        
+        // Add body outline
+        var bodyOutline = bodyObj.AddComponent<Outline>();
+        bodyOutline.effectColor = Color.black;
+        bodyOutline.effectDistance = new Vector2(1, 1);
+        
+        // Create score text (below objectives) if enabled
+        if (enableScore)
+        {
+            GameObject scoreObj = new GameObject("ScoreText");
+            scoreObj.transform.SetParent(objectiveCanvas.transform, false);
+            scoreText = scoreObj.AddComponent<TextMeshProUGUI>();
+            scoreText.text = "Score: 0";
+            scoreText.fontSize = 18;
+            scoreText.fontStyle = FontStyles.Bold;
+            scoreText.color = new Color(0.5f, 0.9f, 1f, 1f); // Cyan color
+            scoreText.alignment = TextAlignmentOptions.TopRight;
+            
+            RectTransform scoreRect = scoreObj.GetComponent<RectTransform>();
+            scoreRect.anchorMin = new Vector2(1f, 1f);
+            scoreRect.anchorMax = new Vector2(1f, 1f);
+            scoreRect.pivot = new Vector2(1f, 1f);
+            scoreRect.anchoredPosition = new Vector2(-20f, -240f); // Below objectives
+            scoreRect.sizeDelta = new Vector2(200f, 30f);
+            
+            // Add score outline
+            var scoreOutline = scoreObj.AddComponent<Outline>();
+            scoreOutline.effectColor = Color.black;
+            scoreOutline.effectDistance = new Vector2(1, 1);
+            
+            // Add score shadow
+            var scoreShadow = scoreObj.AddComponent<Shadow>();
+            scoreShadow.effectColor = new Color(0f, 0f, 0f, 0.7f);
+            scoreShadow.effectDistance = new Vector2(2, -2);
+        }
+    }
+
     // Render the title and checklist into the assigned TMP fields
     public void RenderObjectives()
     {
-        if (titleText != null)
-        {
-            // Default title if empty
-            if (string.IsNullOrEmpty(titleText.text))
-                titleText.text = "Main Objectives";
-        }
-
-        if (bodyText == null)
+        if (titleText == null || bodyText == null)
             return;
 
-    // Build the checklist lines: an empty box for incomplete, or a checked box for complete.
-    // Default to ASCII boxes for broad font compatibility; you can toggle via `useAsciiCheckboxes`.
+        // Build the checklist lines: an empty box for incomplete, or a checked box for complete.
+        // Default to ASCII boxes for broad font compatibility; you can toggle via `useAsciiCheckboxes`.
         System.Text.StringBuilder sb = new System.Text.StringBuilder();
 
         // If there are no groups, show the all-complete text
@@ -103,10 +236,18 @@ public class ObjectiveManager : MonoBehaviour
         {
             sb.AppendLine(allCompleteText);
             bodyText.text = sb.ToString();
+            titleText.text = "Objectives Complete!";
             return;
         }
 
         var group = groups[currentGroupIndex];
+        
+        // Update title with current group name
+        if (!string.IsNullOrEmpty(group.groupTitle))
+            titleText.text = group.groupTitle;
+        else
+            titleText.text = "Main Objectives";
+        
         for (int i = 0; i < group.tasks.Count; i++)
         {
             var t = group.tasks[i];
@@ -300,6 +441,51 @@ public class ObjectiveManager : MonoBehaviour
             Debug.Log("ObjectiveManager: completed group '" + (string.IsNullOrEmpty(group.groupTitle) ? currentGroupIndex.ToString() : group.groupTitle) + "'");
             // Move to next group that has incomplete tasks
             currentGroupIndex = GetNextActiveGroupIndex();
+        }
+    }
+
+    // ===== SCORE MANAGEMENT =====
+    
+    /// <summary>
+    /// Add points to the score and update the UI
+    /// </summary>
+    public void AddScore(int points)
+    {
+        score += points;
+        UpdateScoreUI();
+    }
+    
+    /// <summary>
+    /// Set the score to a specific value
+    /// </summary>
+    public void SetScore(int newScore)
+    {
+        score = newScore;
+        UpdateScoreUI();
+    }
+    
+    /// <summary>
+    /// Get the current score value
+    /// </summary>
+    public int GetScore()
+    {
+        return score;
+    }
+    
+    /// <summary>
+    /// Reset the score to zero
+    /// </summary>
+    public void ResetScore()
+    {
+        score = 0;
+        UpdateScoreUI();
+    }
+    
+    private void UpdateScoreUI()
+    {
+        if (enableScore && scoreText != null)
+        {
+            scoreText.text = $"Score: {score}";
         }
     }
 }
