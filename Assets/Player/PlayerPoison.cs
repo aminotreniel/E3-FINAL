@@ -16,26 +16,26 @@ public class PlayerPoison : MonoBehaviour
     [Tooltip("How many poison points are lost per second")]
     public float decayPerSecond = 1f;
     
-    [Tooltip("Fraction (0-1) at which blur effect should begin (e.g., 0.5 for 50%)")]
+    [Tooltip("Fraction (0-1) at which blackout effect should begin (e.g., 0.5 for 50%)")]
     [Range(0f, 1f)]
-    public float blurThreshold = 0.5f;
+    public float blackoutThreshold = 0.5f;
 
-    [Header("Blur Settings")]
-    [Tooltip("Maximum blur intensity when poison is at 0")]
+    [Header("Blackout Settings")]
+    [Tooltip("Maximum blackout intensity when poison is at 0 (0-1, where 1 is completely black)")]
     [Range(0f, 1f)]
-    public float maxBlurAlpha = 0.7f;
+    public float maxBlackoutAlpha = 0.9f;
     
-    [Tooltip("How fast the blur fades in/out")]
-    public float blurFadeSpeed = 2f;
+    [Tooltip("How fast the blackout fades in/out")]
+    public float blackoutFadeSpeed = 2f;
 
     // UI Elements (created automatically)
     private Canvas poisonCanvas;
     private GameObject poisonBarContainer;
     private Image poisonBarBackground;
     private Image poisonBarFill;
-    private Image blurOverlay;
+    private Image blackoutOverlay;
     
-    private float targetBlurAlpha = 0f;
+    private float targetBlackoutAlpha = 0f;
 
     void Awake()
     {
@@ -74,24 +74,24 @@ public class PlayerPoison : MonoBehaviour
         // Compute normalized fraction (0..1)
         float fraction = (maxPoison > 0f) ? (currentPoison / maxPoison) : 0f;
 
-        // Calculate blur intensity based on poison level
-        if (fraction <= blurThreshold)
+        // Calculate blackout intensity based on poison level
+        if (fraction <= blackoutThreshold)
         {
-            // Map from blurThreshold -> 0 to 0..1 for blur intensity
-            float t = Mathf.InverseLerp(blurThreshold, 0f, fraction);
-            targetBlurAlpha = Mathf.Lerp(0f, maxBlurAlpha, t);
+            // Map from blackoutThreshold -> 0 to 0..1 for blackout intensity
+            float t = Mathf.InverseLerp(blackoutThreshold, 0f, fraction);
+            targetBlackoutAlpha = Mathf.Lerp(0f, maxBlackoutAlpha, t);
         }
         else
         {
-            targetBlurAlpha = 0f;
+            targetBlackoutAlpha = 0f;
         }
 
-        // Apply blur fade
-        if (blurOverlay != null)
+        // Apply blackout fade
+        if (blackoutOverlay != null)
         {
-            var col = blurOverlay.color;
-            col.a = Mathf.MoveTowards(col.a, targetBlurAlpha, blurFadeSpeed * Time.deltaTime);
-            blurOverlay.color = col;
+            var col = blackoutOverlay.color;
+            col.a = Mathf.MoveTowards(col.a, targetBlackoutAlpha, blackoutFadeSpeed * Time.deltaTime);
+            blackoutOverlay.color = col;
         }
     }
 
@@ -205,19 +205,19 @@ public class PlayerPoison : MonoBehaviour
         highlightRect.anchorMax = new Vector2(1f, 1f);
         highlightRect.sizeDelta = Vector2.zero;
         
-        // Create blur overlay (green tinted blur when poison is low)
-        GameObject blurObj = new GameObject("PoisonBlurOverlay");
-        blurObj.transform.SetParent(poisonCanvas.transform, false);
+        // Create blackout overlay (screen goes black when poison is low)
+        GameObject blackoutObj = new GameObject("PoisonBlackoutOverlay");
+        blackoutObj.transform.SetParent(poisonCanvas.transform, false);
         
-        blurOverlay = blurObj.AddComponent<Image>();
-        blurOverlay.color = new Color(0.2f, 0.5f, 0.2f, 0f); // Green tint, fully transparent at start
-        blurOverlay.raycastTarget = false;
+        blackoutOverlay = blackoutObj.AddComponent<Image>();
+        blackoutOverlay.color = new Color(0f, 0f, 0f, 0f); // Pure black, fully transparent at start
+        blackoutOverlay.raycastTarget = false;
         
-        RectTransform blurRect = blurObj.GetComponent<RectTransform>();
-        blurRect.anchorMin = Vector2.zero;
-        blurRect.anchorMax = Vector2.one;
-        blurRect.sizeDelta = Vector2.zero;
-        blurRect.SetAsFirstSibling(); // Behind other UI elements but in front of game
+        RectTransform blackoutRect = blackoutObj.GetComponent<RectTransform>();
+        blackoutRect.anchorMin = Vector2.zero;
+        blackoutRect.anchorMax = Vector2.one;
+        blackoutRect.sizeDelta = Vector2.zero;
+        blackoutRect.SetAsFirstSibling(); // Behind other UI elements but in front of game
     }
 
     private void UpdatePoisonBar()
