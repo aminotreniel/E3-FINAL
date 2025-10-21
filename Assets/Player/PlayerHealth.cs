@@ -24,10 +24,22 @@ public class PlayerHealth : MonoBehaviour
     private Image healthBarFill;
     private Image damageOverlay;
 
+    void Awake()
+    {
+        // Set initial checkpoint very early in the game lifecycle
+        currentCheckpoint = transform.position;
+        Debug.Log("Initial checkpoint set at Awake: " + currentCheckpoint);
+    }
+
     void Start()
     {
         currentHealth = maxHealth;
-        currentCheckpoint = transform.position; // First checkpoint = spawn position
+        // Reconfirm checkpoint in Start (in case position changed)
+        if (currentCheckpoint == Vector3.zero)
+        {
+            currentCheckpoint = transform.position;
+            Debug.Log("Checkpoint set at Start: " + currentCheckpoint);
+        }
 
         CreateHealthBarUI();
         UpdateHealthBar();
@@ -274,8 +286,8 @@ public class PlayerHealth : MonoBehaviour
         if (isDead) return;
         isDead = true;
 
-        Debug.Log("Player Died!");
-        Respawn();
+        Debug.Log("Player Died! Current position: " + transform.position + " | Checkpoint: " + currentCheckpoint);
+        StartCoroutine(RespawnCoroutine());
     }
 
     public void SetCheckpoint(Vector3 checkpointPos)
@@ -284,14 +296,123 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("Checkpoint updated: " + checkpointPos);
     }
 
-    private void Respawn()
+    private IEnumerator RespawnCoroutine()
     {
-        transform.position = currentCheckpoint; // move to last checkpoint
+        Debug.Log("=== RESPAWN STARTED === Current Pos: " + transform.position + " | Target Checkpoint: " + currentCheckpoint);
+        
+        // Disable player movement scripts temporarily
+        var playerMovement = GetComponent<MonoBehaviour>();
+        bool movementWasEnabled = false;
+        
+        // Try to find and disable common movement scripts
+        var allScripts = GetComponents<MonoBehaviour>();
+        foreach (var script in allScripts)
+        {
+            if (script.GetType().Name.Contains("Movement") || 
+                script.GetType().Name.Contains("Controller") ||
+                script.GetType().Name.Contains("Jump"))
+            {
+                if (script.enabled)
+                {
+                    script.enabled = false;
+                    movementWasEnabled = true;
+                    Debug.Log("Disabled script: " + script.GetType().Name);
+                }
+            }
+        }
 
+        // Get Rigidbody reference
+        Rigidbody rb = GetComponent<Rigidbody>();
+        
+        // Reset physics first
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            rb.useGravity = false; // Temporarily disable gravity
+            Debug.Log("Physics velocities reset, gravity disabled");
+        }
+
+        // Handle CharacterController if present
+        CharacterController cc = GetComponent<CharacterController>();
+        bool ccWasEnabled = false;
+        if (cc != null)
+        {
+            ccWasEnabled = cc.enabled;
+            cc.enabled = false;
+            Debug.Log("CharacterController disabled");
+        }
+
+        // Wait a frame to ensure everything is settled
+        yield return null;
+
+        // Teleport using both transform and Rigidbody
+        transform.position = currentCheckpoint;
+        if (rb != null)
+        {
+            rb.position = currentCheckpoint;
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+        Debug.Log("Position set to: " + transform.position);
+
+        // Wait another frame to ensure position sticks
+        yield return null;
+        
+        // Force position again to make absolutely sure
+        transform.position = currentCheckpoint;
+        if (rb != null)
+        {
+            rb.position = currentCheckpoint;
+        }
+        Debug.Log("Position confirmed: " + transform.position);
+
+        // Re-enable gravity
+        if (rb != null)
+        {
+            rb.useGravity = true;
+        }
+
+        // Re-enable CharacterController
+        if (cc != null && ccWasEnabled)
+        {
+            cc.enabled = true;
+            Debug.Log("CharacterController re-enabled");
+        }
+
+        // Reset health
         currentHealth = maxHealth;
         UpdateHealthBar();
 
+        // Small delay before re-enabling movement
+        yield return new WaitForSeconds(0.2f);
+
+        // Force position one more time before enabling movement
+        transform.position = currentCheckpoint;
+        if (rb != null)
+        {
+            rb.position = currentCheckpoint;
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+        Debug.Log("Pre-enable position check: " + transform.position);
+
+        // Re-enable movement scripts
+        if (movementWasEnabled)
+        {
+            foreach (var script in allScripts)
+            {
+                if (script.GetType().Name.Contains("Movement") || 
+                    script.GetType().Name.Contains("Controller") ||
+                    script.GetType().Name.Contains("Jump"))
+                {
+                    script.enabled = true;
+                    Debug.Log("Re-enabled script: " + script.GetType().Name);
+                }
+            }
+        }
+
         isDead = false;
-        Debug.Log("Respawned at checkpoint!");
+        Debug.Log("=== RESPAWN COMPLETE === Final Pos: " + transform.position);
     }
 }
