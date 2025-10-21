@@ -10,6 +10,13 @@ public class Elevator : MonoBehaviour
     [Tooltip("Name of the scene to load (must be added to Build Settings)")]
     public string nextSceneName = "NextScene";
     
+    [Header("Spawn Settings")]
+    [Tooltip("Where the player should spawn in the next scene (optional - leave null to use default spawn)")]
+    public Vector3 spawnPositionInNextScene = Vector3.zero;
+    
+    [Tooltip("Use custom spawn position?")]
+    public bool useCustomSpawnPosition = false;
+    
     [Header("Transition Settings")]
     [Tooltip("Duration of the fade to black transition")]
     public float fadeDuration = 1.5f;
@@ -45,16 +52,16 @@ public class Elevator : MonoBehaviour
     
     private void CreateUIElements()
     {
-        // Create Canvas if it doesn't exist
-        uiCanvas = FindFirstObjectByType<Canvas>();
-        if (uiCanvas == null)
-        {
-            GameObject canvasObj = new GameObject("ElevatorCanvas");
-            uiCanvas = canvasObj.AddComponent<Canvas>();
-            uiCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
-            canvasObj.AddComponent<CanvasScaler>();
-            canvasObj.AddComponent<GraphicRaycaster>();
-        }
+        // Find existing canvas or create a temporary one (will be destroyed with scene)
+        GameObject canvasObj = new GameObject("ElevatorCanvas");
+        uiCanvas = canvasObj.AddComponent<Canvas>();
+        uiCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
+        uiCanvas.sortingOrder = 200; // High sorting order to be on top
+        canvasObj.AddComponent<CanvasScaler>();
+        canvasObj.AddComponent<GraphicRaycaster>();
+        
+        // DO NOT persist this canvas - it should be destroyed with the scene
+        // DontDestroyOnLoad(canvasObj); // REMOVED
         
         // Create prompt text (always create it automatically)
         GameObject textObj = new GameObject("ElevatorPromptText");
@@ -159,6 +166,19 @@ public class Elevator : MonoBehaviour
         
         // Wait while black
         yield return new WaitForSeconds(blackoutDuration);
+        
+        // Store spawn position if using custom position
+        if (useCustomSpawnPosition)
+        {
+            PlayerPrefs.SetFloat("SpawnX", spawnPositionInNextScene.x);
+            PlayerPrefs.SetFloat("SpawnY", spawnPositionInNextScene.y);
+            PlayerPrefs.SetFloat("SpawnZ", spawnPositionInNextScene.z);
+            PlayerPrefs.SetInt("UseCustomSpawn", 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("UseCustomSpawn", 0);
+        }
         
         // Load the next scene
         SceneManager.LoadScene(nextSceneName);

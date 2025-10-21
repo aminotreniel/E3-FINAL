@@ -14,12 +14,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene1.unity
     guid: 86016803fed31094db264e7163b89206
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/EnemyScene.unity
     guid: fdcdb3d3cefe66641a9e6c59c6d98bf9
   - enabled: 0
     path: Assets/Scenes/StartScene.unity
     guid: f9ceff07b99f67041ab7019b5d9989b8
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: 705bd6b947b7a7a4e910821549dea00d
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9eb07e2d669e9c94e9d7d3c782a916f7,
       type: 2}

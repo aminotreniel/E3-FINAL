@@ -44,16 +44,63 @@ public class PlayerHealth : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+        
+        // Handle duplicate Audio Listeners across scenes
+        HandleAudioListener();
+    }
+    
+    private void HandleAudioListener()
+    {
+        // Find all Audio Listeners in the scene
+        AudioListener[] listeners = FindObjectsByType<AudioListener>(FindObjectsSortMode.None);
+        
+        if (listeners.Length > 1)
+        {
+            Debug.Log($"Found {listeners.Length} Audio Listeners. Removing duplicates...");
+            
+            // Keep only the one on the player (this object)
+            AudioListener playerListener = GetComponentInChildren<AudioListener>();
+            
+            foreach (AudioListener listener in listeners)
+            {
+                // Destroy listeners that are NOT on the player
+                if (listener != playerListener && listener.gameObject != gameObject)
+                {
+                    Debug.Log($"Destroying extra Audio Listener on: {listener.gameObject.name}");
+                    Destroy(listener);
+                }
+            }
+        }
     }
 
     void Start()
     {
         currentHealth = maxHealth;
-        // Reconfirm checkpoint in Start (in case position changed)
-        if (currentCheckpoint == Vector3.zero)
+        
+        // Check if we should use a custom spawn position (from elevator or scene transition)
+        if (PlayerPrefs.GetInt("UseCustomSpawn", 0) == 1)
         {
-            currentCheckpoint = transform.position;
-            Debug.Log("Checkpoint set at Start: " + currentCheckpoint);
+            Vector3 spawnPos = new Vector3(
+                PlayerPrefs.GetFloat("SpawnX", 0),
+                PlayerPrefs.GetFloat("SpawnY", 0),
+                PlayerPrefs.GetFloat("SpawnZ", 0)
+            );
+            
+            transform.position = spawnPos;
+            currentCheckpoint = spawnPos;
+            
+            // Clear the custom spawn flag
+            PlayerPrefs.SetInt("UseCustomSpawn", 0);
+            Debug.Log("Player spawned at custom position: " + spawnPos);
+        }
+        else
+        {
+            // Reconfirm checkpoint in Start (in case position changed)
+            if (currentCheckpoint == Vector3.zero)
+            {
+                currentCheckpoint = transform.position;
+                Debug.Log("Checkpoint set at Start: " + currentCheckpoint);
+            }
         }
 
         CreateHealthBarUI();
