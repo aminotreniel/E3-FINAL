@@ -62,10 +62,11 @@ public class ObjectiveManager : MonoBehaviour
 
     void Awake()
     {
-        // Singleton pattern
+        // Singleton pattern with scene persistence
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject); // Persist across scenes
         }
         else
         {
@@ -101,17 +102,22 @@ public class ObjectiveManager : MonoBehaviour
 
     private void CreateObjectiveUI()
     {
-        // Find or create canvas
-        objectiveCanvas = FindFirstObjectByType<Canvas>();
-        if (objectiveCanvas == null)
+        // Check if we already have our UI
+        if (titleText != null)
         {
-            GameObject canvasObj = new GameObject("ObjectiveCanvas");
-            objectiveCanvas = canvasObj.AddComponent<Canvas>();
-            objectiveCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
-            objectiveCanvas.sortingOrder = 100;
-            canvasObj.AddComponent<CanvasScaler>();
-            canvasObj.AddComponent<GraphicRaycaster>();
+            return; // UI already exists, don't recreate
         }
+
+        // Create our own dedicated canvas for objectives
+        GameObject canvasObj = new GameObject("ObjectiveCanvas");
+        objectiveCanvas = canvasObj.AddComponent<Canvas>();
+        objectiveCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
+        objectiveCanvas.sortingOrder = 102; // Higher than health and poison
+        canvasObj.AddComponent<CanvasScaler>();
+        canvasObj.AddComponent<GraphicRaycaster>();
+        
+        // Make canvas persist across scenes too
+        DontDestroyOnLoad(canvasObj);
 
         // Create main container in upper right corner
         GameObject containerObj = new GameObject("ObjectiveContainer");

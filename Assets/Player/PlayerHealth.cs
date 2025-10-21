@@ -5,6 +5,8 @@ using System.Collections;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public static PlayerHealth Instance; // Singleton to prevent duplicates
+    
     [Header("Health Settings")]
     public float maxHealth = 100f;
     public float currentHealth;
@@ -26,9 +28,22 @@ public class PlayerHealth : MonoBehaviour
 
     void Awake()
     {
-        // Set initial checkpoint very early in the game lifecycle
-        currentCheckpoint = transform.position;
-        Debug.Log("Initial checkpoint set at Awake: " + currentCheckpoint);
+        // Singleton pattern to prevent duplicate players across scenes
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // Make player persist across scenes
+            
+            // Set initial checkpoint very early in the game lifecycle
+            currentCheckpoint = transform.position;
+            Debug.Log("Initial checkpoint set at Awake: " + currentCheckpoint);
+        }
+        else
+        {
+            // Destroy duplicate player
+            Destroy(gameObject);
+            return;
+        }
     }
 
     void Start()
@@ -47,17 +62,22 @@ public class PlayerHealth : MonoBehaviour
 
     private void CreateHealthBarUI()
     {
-        // Find or create canvas
-        healthCanvas = FindFirstObjectByType<Canvas>();
-        if (healthCanvas == null)
+        // Check if we already have our UI
+        if (healthBarContainer != null)
         {
-            GameObject canvasObj = new GameObject("HealthCanvas");
-            healthCanvas = canvasObj.AddComponent<Canvas>();
-            healthCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
-            healthCanvas.sortingOrder = 100;
-            canvasObj.AddComponent<CanvasScaler>();
-            canvasObj.AddComponent<GraphicRaycaster>();
+            return; // UI already exists, don't recreate
         }
+
+        // Create our own dedicated canvas for health
+        GameObject canvasObj = new GameObject("HealthCanvas");
+        healthCanvas = canvasObj.AddComponent<Canvas>();
+        healthCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
+        healthCanvas.sortingOrder = 100;
+        canvasObj.AddComponent<CanvasScaler>();
+        canvasObj.AddComponent<GraphicRaycaster>();
+        
+        // Make canvas persist across scenes too
+        DontDestroyOnLoad(canvasObj);
 
         // Create main container with shadow
         healthBarContainer = new GameObject("HealthBarContainer");

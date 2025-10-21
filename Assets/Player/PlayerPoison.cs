@@ -4,6 +4,8 @@ using System.Collections;
 
 public class PlayerPoison : MonoBehaviour
 {
+    public static PlayerPoison Instance; // Singleton to prevent duplicates
+    
     [Header("Poison Settings")]
     [Tooltip("Maximum poison value (start value)")]
     public float maxPoison = 100f;
@@ -34,6 +36,22 @@ public class PlayerPoison : MonoBehaviour
     private Image blurOverlay;
     
     private float targetBlurAlpha = 0f;
+
+    void Awake()
+    {
+        // Singleton pattern to prevent duplicate poison systems across scenes
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // Make poison system persist across scenes
+        }
+        else
+        {
+            // Destroy duplicate
+            Destroy(gameObject);
+            return;
+        }
+    }
 
     void Start()
     {
@@ -79,17 +97,22 @@ public class PlayerPoison : MonoBehaviour
 
     private void CreatePoisonBarUI()
     {
-        // Find or create canvas
-        poisonCanvas = FindFirstObjectByType<Canvas>();
-        if (poisonCanvas == null)
+        // Check if we already have our UI
+        if (poisonBarContainer != null)
         {
-            GameObject canvasObj = new GameObject("PoisonCanvas");
-            poisonCanvas = canvasObj.AddComponent<Canvas>();
-            poisonCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
-            poisonCanvas.sortingOrder = 100;
-            canvasObj.AddComponent<CanvasScaler>();
-            canvasObj.AddComponent<GraphicRaycaster>();
+            return; // UI already exists, don't recreate
         }
+
+        // Create our own dedicated canvas for poison
+        GameObject canvasObj = new GameObject("PoisonCanvas");
+        poisonCanvas = canvasObj.AddComponent<Canvas>();
+        poisonCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
+        poisonCanvas.sortingOrder = 101; // Slightly higher than health
+        canvasObj.AddComponent<CanvasScaler>();
+        canvasObj.AddComponent<GraphicRaycaster>();
+        
+        // Make canvas persist across scenes too
+        DontDestroyOnLoad(canvasObj);
 
         // Create main container with shadow
         poisonBarContainer = new GameObject("PoisonBarContainer");
