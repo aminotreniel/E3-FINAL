@@ -8025,6 +8025,43 @@ MonoBehaviour:
   detectionRange: 7
   attackRange: 2
   attackRate: 1.1
+--- !u!1 &254727635 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d3c9e810440ff747be3859537bf885e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1705143105}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &254727638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254727635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5001712b53985448801057a9a57bcd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionRange: 5
+  interactionDistance: 3
+  followDistance: 2
+  maxFollowDistance: 15
+  stoppingDistance: 1.5
+  moveSpeed: 2.5
+  rotationSpeed: 8
+  healAmount: 5
+  healInterval: 3
+  healThreshold: 0.8
+  sadIdleAnimation: SadIdle
+  talkingAnimation: Talking
+  idleAnimation: Idle
+  walkingAnimation: Walking
+  alignToGround: 1
+  groundCheckDistance: 2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &257389347
 GameObject:
   m_ObjectHideFlags: 0
@@ -54191,6 +54228,88 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1701329272}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1705143105
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 7d3c9e810440ff747be3859537bf885e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.4088705
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7d3c9e810440ff747be3859537bf885e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.523
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7d3c9e810440ff747be3859537bf885e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.5568604
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7d3c9e810440ff747be3859537bf885e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7d3c9e810440ff747be3859537bf885e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7d3c9e810440ff747be3859537bf885e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7d3c9e810440ff747be3859537bf885e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7d3c9e810440ff747be3859537bf885e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7d3c9e810440ff747be3859537bf885e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7d3c9e810440ff747be3859537bf885e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7d3c9e810440ff747be3859537bf885e,
+        type: 3}
+      propertyPath: m_Name
+      value: Doctor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 7d3c9e810440ff747be3859537bf885e,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f2d264659bc957f46b8de0e91161e750, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 7d3c9e810440ff747be3859537bf885e,
+        type: 3}
+      propertyPath: m_WarningMessage
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d3c9e810440ff747be3859537bf885e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 254727638}
+  m_SourcePrefab: {fileID: 100100000, guid: 7d3c9e810440ff747be3859537bf885e, type: 3}
 --- !u!1 &1706296617 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4992368478639359546, guid: be7b2846c3aac804eb2de88a9a5a02eb,
@@ -59985,6 +60104,15 @@ MonoBehaviour:
   healAmount: 5
   healInterval: 3
   healThreshold: 0.8
+  sadIdleAnimation: SadIdle
+  talkingAnimation: Talking
+  idleAnimation: Idle
+  walkingAnimation: Walking
+  alignToGround: 1
+  groundCheckDistance: 2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!65 &1951079540
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -66269,3 +66397,4 @@ SceneRoots:
   - {fileID: 2079075174}
   - {fileID: 1969465837}
   - {fileID: 93476821}
+  - {fileID: 1705143105}
