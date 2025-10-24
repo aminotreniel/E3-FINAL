@@ -1,0 +1,11 @@
+Model Information:
+* title:	Sci-fi box
+* source:	https://sketchfab.com/3d-models/sci-fi-box-26c914d3a6c54019ab795a179c3b9837
+* author:	Hed1n (https://sketchfab.com/Hed1n)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Sci-fi box" (https://sketchfab.com/3d-models/sci-fi-box-26c914d3a6c54019ab795a179c3b9837) by Hed1n (https://sketchfab.com/Hed1n) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
