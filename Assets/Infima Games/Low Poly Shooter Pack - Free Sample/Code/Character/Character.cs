@@ -195,6 +195,9 @@ namespace InfimaGames.LowPolyShooterPack
 			layerActions = characterAnimator.GetLayerIndex("Layer Actions");
 			//Cache a reference to the overlay layer's index.
 			layerOverlay = characterAnimator.GetLayerIndex("Layer Overlay");
+			
+			//Automatically holster weapon at start (hide gun)
+			SetHolstered(true);
 		}
 
 		protected override void Update()
