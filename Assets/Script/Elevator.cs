@@ -6,6 +6,10 @@ using TMPro;
 
 public class Elevator : MonoBehaviour
 {
+    [Header("UI Settings")]
+    [Tooltip("Text to display when player is near the elevator")]
+    public string promptMessage = "Press [E] to use elevator";
+    
     [Header("Scene Settings")]
     [Tooltip("Name of the scene to load (must be added to Build Settings)")]
     public string nextSceneName = "NextScene";
@@ -43,6 +47,12 @@ public class Elevator : MonoBehaviour
     
     void Update()
     {
+        // Update text if it changed
+        if (promptText != null && promptText.text != promptMessage)
+        {
+            promptText.text = promptMessage;
+        }
+        
         // Check if player is inside and pressed E
         if (playerInside && !isTransitioning && Input.GetKeyDown(KeyCode.E))
         {
@@ -68,7 +78,7 @@ public class Elevator : MonoBehaviour
         textObj.transform.SetParent(uiCanvas.transform, false);
         
         promptText = textObj.AddComponent<TextMeshProUGUI>();
-        promptText.text = "Press E to go down";
+        promptText.text = promptMessage; // Use customizable text
         promptText.fontSize = 36;
         promptText.color = Color.white;
         promptText.alignment = TextAlignmentOptions.Center;
