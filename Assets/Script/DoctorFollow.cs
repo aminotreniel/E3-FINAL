@@ -22,6 +22,17 @@ public class DoctorScript : MonoBehaviour
     [Range(0f, 1f)]
     public float healThreshold = 0.8f;
     
+    [Header("Animation Settings")]
+    public string sadIdleAnimation = "SadIdle";
+    public string talkingAnimation = "Talking";
+    public string idleAnimation = "Idle";
+    public string walkingAnimation = "Walking";
+    
+    [Header("Ground Alignment")]
+    public bool alignToGround = true;
+    public float groundCheckDistance = 2f;
+    public LayerMask groundLayer = -1; // Default to all layers
+    
     private Transform player;
     private PlayerHealth playerHealth;
     private bool isRecruited = false;
@@ -30,6 +41,9 @@ public class DoctorScript : MonoBehaviour
     private bool hasShownInitialDialogue = false;
     private bool isShowingDialogue = false;
     private float nextHealTime = 0f;
+    private Animator animator;
+    private bool isWalking = false;
+    private Vector3 lastPosition;
     
     private enum DialogueState
     {
@@ -54,6 +68,25 @@ public class DoctorScript : MonoBehaviour
             player = playerObj.transform;
             playerHealth = playerObj.GetComponent<PlayerHealth>();
         }
+        
+        // Get or create Animator component
+        animator = GetComponent<Animator>();
+        if (animator == null)
+        {
+            animator = gameObject.AddComponent<Animator>();
+        }
+        
+        // Disable root motion - animation plays in place, script controls movement
+        if (animator != null)
+        {
+            animator.applyRootMotion = false;
+        }
+        
+        // Initialize position tracking
+        lastPosition = transform.position;
+        
+        // Start with SadIdle animation
+        PlayAnimation(sadIdleAnimation, true);
         
         CreatePromptUI();
         if (promptContainer != null)
@@ -104,6 +137,31 @@ public class DoctorScript : MonoBehaviour
         {
             FollowPlayer(distanceToPlayer);
             HealPlayerOverTime();
+            
+            // Align to ground
+            if (alignToGround)
+            {
+                AlignToGround();
+            }
+            
+            // Check if doctor is moving and update animation
+            float moveDistance = Vector3.Distance(transform.position, lastPosition);
+            bool currentlyWalking = moveDistance > 0.01f;
+            
+            if (currentlyWalking && !isWalking)
+            {
+                // Started walking
+                PlayAnimation(walkingAnimation, true);
+                isWalking = true;
+            }
+            else if (!currentlyWalking && isWalking)
+            {
+                // Stopped walking
+                PlayAnimation(idleAnimation, true);
+                isWalking = false;
+            }
+            
+            lastPosition = transform.position;
         }
     }
     
@@ -111,6 +169,9 @@ public class DoctorScript : MonoBehaviour
     {
         isShowingDialogue = true;
         currentDialogueState = DialogueState.InitialPlea;
+        
+        // Play Talking animation
+        PlayAnimation(talkingAnimation, false);
         
         if (promptText != null)
         {
@@ -131,6 +192,9 @@ public class DoctorScript : MonoBehaviour
             promptContainer.SetActive(false);
         }
         
+        // Return to SadIdle after talking
+        PlayAnimation(sadIdleAnimation, true);
+        
         hasShownInitialDialogue = true;
         currentDialogueState = DialogueState.ShowInteractPrompt;
         
@@ -146,6 +210,9 @@ public class DoctorScript : MonoBehaviour
     private IEnumerator RecruitDialogue()
     {
         isShowingDialogue = true;
+        
+        // Play Talking animation
+        PlayAnimation(talkingAnimation, false);
         
         if (promptContainer != null)
         {
@@ -193,6 +260,9 @@ public class DoctorScript : MonoBehaviour
         {
             promptContainer.SetActive(false);
         }
+        
+        // Switch to Idle after recruitment
+        PlayAnimation(idleAnimation, true);
         
         isRecruited = true;
         currentDialogueState = DialogueState.Following;
@@ -267,12 +337,21 @@ public class DoctorScript : MonoBehaviour
         
         if (distanceToPlayer > stoppingDistance)
         {
+            // Calculate direction to player
             Vector3 directionToPlayer = (player.position - transform.position).normalized;
-            transform.position += directionToPlayer * moveSpeed * Time.deltaTime;
             
-            if (directionToPlayer != Vector3.zero)
+            // Only move on X and Z axes, preserve Y for ground alignment
+            Vector3 horizontalDirection = new Vector3(directionToPlayer.x, 0f, directionToPlayer.z).normalized;
+            
+            // Move toward player using script (not animation root motion)
+            Vector3 newPosition = transform.position + horizontalDirection * moveSpeed * Time.deltaTime;
+            newPosition.y = transform.position.y; // Keep Y position stable
+            transform.position = newPosition;
+            
+            // Rotate to face player
+            if (horizontalDirection != Vector3.zero)
             {
-                Quaternion targetRotation = Quaternion.LookRotation(directionToPlayer);
+                Quaternion targetRotation = Quaternion.LookRotation(horizontalDirection);
                 transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
             }
         }
@@ -303,6 +382,92 @@ public class DoctorScript : MonoBehaviour
         }
     }
     
+    private void AlignToGround()
+    {
+        RaycastHit hit;
+        Vector3 rayStart = transform.position + Vector3.up * 0.5f; // Start slightly above
+        
+        // Cast ray downward to find ground
+        if (Physics.Raycast(rayStart, Vector3.down, out hit, groundCheckDistance, groundLayer))
+        {
+            // Smoothly move to ground position
+            Vector3 targetPosition = transform.position;
+            targetPosition.y = hit.point.y;
+            transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * 10f);
+            
+            // Align rotation to ground normal (optional, for slopes)
+            Quaternion targetRotation = Quaternion.FromToRotation(transform.up, hit.normal) * transform.rotation;
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
+        }
+    }
+
+    private void PlayAnimation(string animationName, bool loop)
+    {
+        if (animator == null) return;
+        
+        // If animator has an AnimatorController, use triggers/parameters
+        if (animator.runtimeAnimatorController != null)
+        {
+            // Reset all boolean parameters first to avoid conflicts
+            foreach (var param in animator.parameters)
+            {
+                if (param.type == AnimatorControllerParameterType.Bool)
+                {
+                    animator.SetBool(param.name, false);
+                }
+            }
+            
+            // Try to set trigger or boolean parameter
+            foreach (var param in animator.parameters)
+            {
+                if (param.name == animationName && param.type == AnimatorControllerParameterType.Trigger)
+                {
+                    animator.SetTrigger(animationName);
+                    return;
+                }
+                else if (param.name == animationName && param.type == AnimatorControllerParameterType.Bool)
+                {
+                    animator.SetBool(animationName, true);
+                    return;
+                }
+            }
+            
+            // Force play by state name at layer 0, with immediate transition
+            animator.Play(animationName, 0, 0f);
+        }
+        else
+        {
+            // No controller, play animation clip directly
+            AnimationClip clip = FindAnimationClip(animationName);
+            if (clip != null)
+            {
+                Animation legacyAnim = GetComponent<Animation>();
+                if (legacyAnim == null)
+                {
+                    legacyAnim = gameObject.AddComponent<Animation>();
+                }
+                
+                legacyAnim.AddClip(clip, animationName);
+                legacyAnim.wrapMode = loop ? WrapMode.Loop : WrapMode.Once;
+                legacyAnim.Play(animationName);
+            }
+        }
+    }
+    
+    private AnimationClip FindAnimationClip(string clipName)
+    {
+        // Try to find animation clip in animator
+        if (animator != null && animator.runtimeAnimatorController != null)
+        {
+            foreach (var clip in animator.runtimeAnimatorController.animationClips)
+            {
+                if (clip.name == clipName)
+                    return clip;
+            }
+        }
+        return null;
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.cyan;
