@@ -649,7 +649,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &19860844
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1710,7 +1710,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe09109daa37914ca1d842e67ee2dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageText: {fileID: 1378879068}
   messages:
   - "I need to get out of here\u2026 before I end up just like them."
   displayTime: 3
@@ -1984,7 +1983,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe09109daa37914ca1d842e67ee2dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageText: {fileID: 1378879068}
   messages:
   - "hala y*w* unsa mana\r"
   - ga imagine rako or na abat na ni ang mga tao diri
@@ -2044,7 +2042,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe09109daa37914ca1d842e67ee2dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageText: {fileID: 1378879068}
   messages:
   - "How long have I been out? The place\u2026 it looks ruined."
   displayTime: 3
@@ -2761,7 +2758,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe09109daa37914ca1d842e67ee2dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageText: {fileID: 1378879068}
   messages:
   - uy naa lage yawe diri para asa mani
   displayTime: 3
@@ -8650,7 +8646,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &347080931
 Light:
   m_ObjectHideFlags: 0
@@ -15006,7 +15002,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe09109daa37914ca1d842e67ee2dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageText: {fileID: 1378879068}
   messages:
   - hoyy!! nay tao diri!! tabang!!
   displayTime: 3
@@ -15065,7 +15060,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe09109daa37914ca1d842e67ee2dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageText: {fileID: 1378879068}
   messages:
   - "How long have I been out? The place\u2026 it looks ruined."
   displayTime: 3
@@ -18645,7 +18639,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe09109daa37914ca1d842e67ee2dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageText: {fileID: 1378879068}
   messages:
   - kaon laman sa ko ug sardines diri
   displayTime: 3
@@ -24371,7 +24364,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe09109daa37914ca1d842e67ee2dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageText: {fileID: 1378879068}
   messages:
   - para ni diri?
   displayTime: 3
@@ -26485,7 +26477,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe09109daa37914ca1d842e67ee2dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageText: {fileID: 1378879068}
   messages:
   - daghana lage ug zombies diri...
   - ato ni hutdon tanan
@@ -26545,7 +26536,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe09109daa37914ca1d842e67ee2dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageText: {fileID: 1378879068}
   messages:
   - "How long have I been out? The place\u2026 it looks ruined."
   displayTime: 3
@@ -29431,7 +29421,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe09109daa37914ca1d842e67ee2dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageText: {fileID: 1378879068}
   messages:
   - "hala y*w* unsa mana\r"
   - ga imagine rako or na abat na ni ang mga tao diri
@@ -29491,7 +29480,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe09109daa37914ca1d842e67ee2dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageText: {fileID: 1378879068}
   messages:
   - "How long have I been out? The place\u2026 it looks ruined."
   displayTime: 3
@@ -31258,7 +31246,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe09109daa37914ca1d842e67ee2dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageText: {fileID: 1378879068}
   messages:
   - uy naa lage yawe diri para asa mani
   displayTime: 3
@@ -34433,7 +34420,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe09109daa37914ca1d842e67ee2dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageText: {fileID: 1378879068}
   messages:
   - hay salamat nay pagkaon
   displayTime: 3
@@ -34492,7 +34478,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe09109daa37914ca1d842e67ee2dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageText: {fileID: 1378879068}
   messages:
   - "How long have I been out? The place\u2026 it looks ruined."
   displayTime: 3
@@ -35525,7 +35510,7 @@ PrefabInstance:
     - target: {fileID: 6362629080841225402, guid: 8437ea98d41630e4aae65534dc24fc0c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8028520317439091319, guid: 8437ea98d41630e4aae65534dc24fc0c,
         type: 3}
@@ -39508,7 +39493,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe09109daa37914ca1d842e67ee2dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageText: {fileID: 1378879068}
   messages:
   - '
 
@@ -39569,7 +39553,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe09109daa37914ca1d842e67ee2dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageText: {fileID: 1378879068}
   messages:
   - "How long have I been out? The place\u2026 it looks ruined."
   displayTime: 3
@@ -49605,7 +49588,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe09109daa37914ca1d842e67ee2dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageText: {fileID: 1378879068}
   messages:
   - nabuyod lage ko?? kuhaon sa nako ni ang vicks diri
   displayTime: 3
@@ -55181,7 +55163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe09109daa37914ca1d842e67ee2dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageText: {fileID: 1378879068}
   messages:
   - kaon laman sa ko ug sardines diri
   displayTime: 3

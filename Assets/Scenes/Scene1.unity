@@ -28763,7 +28763,7 @@ PrefabInstance:
     - target: {fileID: 6021338010926877174, guid: 8437ea98d41630e4aae65534dc24fc0c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.04
+      value: -43.95
       objectReference: {fileID: 0}
     - target: {fileID: 6021338010926877174, guid: 8437ea98d41630e4aae65534dc24fc0c,
         type: 3}
@@ -28773,7 +28773,7 @@ PrefabInstance:
     - target: {fileID: 6021338010926877174, guid: 8437ea98d41630e4aae65534dc24fc0c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.04
+      value: 54.93
       objectReference: {fileID: 0}
     - target: {fileID: 6021338010926877174, guid: 8437ea98d41630e4aae65534dc24fc0c,
         type: 3}
@@ -66504,8 +66504,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   promptMessage: Press [E] to use elevator
   nextSceneName: Scene2
-  spawnPositionInNextScene: {x: 0, y: 0, z: 0}
-  useCustomSpawnPosition: 0
+  spawnPositionInNextScene: {x: 0.78, y: -0.5, z: 18}
+  useCustomSpawnPosition: 1
   fadeDuration: 1.5
   blackoutDuration: 0.5
 --- !u!65 &2095326321

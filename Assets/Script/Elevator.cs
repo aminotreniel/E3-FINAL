@@ -177,17 +177,10 @@ public class Elevator : MonoBehaviour
         // Wait while black
         yield return new WaitForSeconds(blackoutDuration);
         
-        // Store spawn position if using custom position
+        // Set spawn position using the spawn manager if custom position is enabled
         if (useCustomSpawnPosition)
         {
-            PlayerPrefs.SetFloat("SpawnX", spawnPositionInNextScene.x);
-            PlayerPrefs.SetFloat("SpawnY", spawnPositionInNextScene.y);
-            PlayerPrefs.SetFloat("SpawnZ", spawnPositionInNextScene.z);
-            PlayerPrefs.SetInt("UseCustomSpawn", 1);
-        }
-        else
-        {
-            PlayerPrefs.SetInt("UseCustomSpawn", 0);
+            ElevatorSpawnManager.SetSpawnPosition(spawnPositionInNextScene, nextSceneName);
         }
         
         // Load the next scene
