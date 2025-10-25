@@ -1,0 +1,11 @@
+Model Information:
+* title:	Sci-fi Props Pack
+* source:	https://sketchfab.com/3d-models/sci-fi-props-pack-87755887f46e4af7a78bffd21ca7b86a
+* author:	Xavi Pujadas (https://sketchfab.com/XaviPujadas)
+
+Model License:
+* license type:	CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions can not be distributed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Sci-fi Props Pack" (https://sketchfab.com/3d-models/sci-fi-props-pack-87755887f46e4af7a78bffd21ca7b86a) by Xavi Pujadas (https://sketchfab.com/XaviPujadas) licensed under CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)

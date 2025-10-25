@@ -1,0 +1,220 @@
+fileFormatVersion: 2
+guid: ef11b24ea4dd5134b99be2ad61973628
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 715df9372183c47e389bb6e19fbc3b52, type: 3}
+  editorImportSettings:
+    generateSecondaryUVSet: 0
+  importSettings:
+    nodeNameMethod: 1
+    animationMethod: 2
+    generateMipMaps: 1
+    texturesReadable: 0
+    defaultMinFilterMode: 9729
+    defaultMagFilterMode: 9729
+    anisotropicFilterLevel: 1
+  instantiationSettings:
+    mask: -1
+    layer: 0
+    skinUpdateWhenOffscreen: 1
+    lightIntensityFactor: 1
+    sceneObjectCreation: 2
+  assetDependencies:
+  - type: 0
+    originalUri: Assets\sci-fi_props_pack\scene.bin
+    assetPath: Assets\sci-fi_props_pack\scene.bin
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\panel_cables_baseColor.png
+    assetPath: Assets\sci-fi_props_pack\textures\panel_cables_baseColor.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\panel_cables_metallicRoughness.png
+    assetPath: Assets\sci-fi_props_pack\textures\panel_cables_metallicRoughness.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\panel_cables_emissive.png
+    assetPath: Assets\sci-fi_props_pack\textures\panel_cables_emissive.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\panel_cables_normal.png
+    assetPath: Assets\sci-fi_props_pack\textures\panel_cables_normal.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\tablet_baseColor.png
+    assetPath: Assets\sci-fi_props_pack\textures\tablet_baseColor.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\tablet_metallicRoughness.png
+    assetPath: Assets\sci-fi_props_pack\textures\tablet_metallicRoughness.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\tablet_emissive.png
+    assetPath: Assets\sci-fi_props_pack\textures\tablet_emissive.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\tablet_normal.png
+    assetPath: Assets\sci-fi_props_pack\textures\tablet_normal.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\Foco_baseColor.png
+    assetPath: Assets\sci-fi_props_pack\textures\Foco_baseColor.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\Foco_metallicRoughness.png
+    assetPath: Assets\sci-fi_props_pack\textures\Foco_metallicRoughness.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\Foco_emissive.png
+    assetPath: Assets\sci-fi_props_pack\textures\Foco_emissive.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\Foco_normal.png
+    assetPath: Assets\sci-fi_props_pack\textures\Foco_normal.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\panel_3_baseColor.png
+    assetPath: Assets\sci-fi_props_pack\textures\panel_3_baseColor.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\panel_3_metallicRoughness.png
+    assetPath: Assets\sci-fi_props_pack\textures\panel_3_metallicRoughness.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\panel_3_emissive.png
+    assetPath: Assets\sci-fi_props_pack\textures\panel_3_emissive.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\panel_3_normal.png
+    assetPath: Assets\sci-fi_props_pack\textures\panel_3_normal.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\armario_baseColor.png
+    assetPath: Assets\sci-fi_props_pack\textures\armario_baseColor.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\armario_metallicRoughness.png
+    assetPath: Assets\sci-fi_props_pack\textures\armario_metallicRoughness.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\armario_emissive.png
+    assetPath: Assets\sci-fi_props_pack\textures\armario_emissive.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\armario_normal.png
+    assetPath: Assets\sci-fi_props_pack\textures\armario_normal.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\armario_puerta_baseColor.png
+    assetPath: Assets\sci-fi_props_pack\textures\armario_puerta_baseColor.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\armario_puerta_metallicRoughness.png
+    assetPath: Assets\sci-fi_props_pack\textures\armario_puerta_metallicRoughness.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\armario_puerta_emissive.png
+    assetPath: Assets\sci-fi_props_pack\textures\armario_puerta_emissive.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\armario_puerta_normal.png
+    assetPath: Assets\sci-fi_props_pack\textures\armario_puerta_normal.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\tubos_cortos_curva_baseColor.png
+    assetPath: Assets\sci-fi_props_pack\textures\tubos_cortos_curva_baseColor.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\tubos_cortos_curva_metallicRoughness.png
+    assetPath: Assets\sci-fi_props_pack\textures\tubos_cortos_curva_metallicRoughness.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\tubos_cortos_curva_normal.png
+    assetPath: Assets\sci-fi_props_pack\textures\tubos_cortos_curva_normal.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\tubos_cortos_baseColor.png
+    assetPath: Assets\sci-fi_props_pack\textures\tubos_cortos_baseColor.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\tubos_cortos_metallicRoughness.png
+    assetPath: Assets\sci-fi_props_pack\textures\tubos_cortos_metallicRoughness.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\tubos_cortos_normal.png
+    assetPath: Assets\sci-fi_props_pack\textures\tubos_cortos_normal.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\luces_baseColor.png
+    assetPath: Assets\sci-fi_props_pack\textures\luces_baseColor.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\luces_metallicRoughness.png
+    assetPath: Assets\sci-fi_props_pack\textures\luces_metallicRoughness.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\luces_emissive.png
+    assetPath: Assets\sci-fi_props_pack\textures\luces_emissive.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\luces_normal.png
+    assetPath: Assets\sci-fi_props_pack\textures\luces_normal.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\Wires_baseColor.png
+    assetPath: Assets\sci-fi_props_pack\textures\Wires_baseColor.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\Wires_metallicRoughness.png
+    assetPath: Assets\sci-fi_props_pack\textures\Wires_metallicRoughness.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\Wires_emissive.png
+    assetPath: Assets\sci-fi_props_pack\textures\Wires_emissive.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\Wires_normal.png
+    assetPath: Assets\sci-fi_props_pack\textures\Wires_normal.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\conexion_tubos_baseColor.png
+    assetPath: Assets\sci-fi_props_pack\textures\conexion_tubos_baseColor.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\conexion_tubos_metallicRoughness.png
+    assetPath: Assets\sci-fi_props_pack\textures\conexion_tubos_metallicRoughness.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\conexion_tubos_normal.png
+    assetPath: Assets\sci-fi_props_pack\textures\conexion_tubos_normal.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\tubos_largos_baseColor.png
+    assetPath: Assets\sci-fi_props_pack\textures\tubos_largos_baseColor.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\tubos_largos_metallicRoughness.png
+    assetPath: Assets\sci-fi_props_pack\textures\tubos_largos_metallicRoughness.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\tubos_largos_normal.png
+    assetPath: Assets\sci-fi_props_pack\textures\tubos_largos_normal.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\MATIN_Caja_1_baseColor.png
+    assetPath: Assets\sci-fi_props_pack\textures\MATIN_Caja_1_baseColor.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\MATIN_Caja_1_metallicRoughness.png
+    assetPath: Assets\sci-fi_props_pack\textures\MATIN_Caja_1_metallicRoughness.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\MATIN_Caja_1_emissive.png
+    assetPath: Assets\sci-fi_props_pack\textures\MATIN_Caja_1_emissive.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\MATIN_Caja_1_normal.png
+    assetPath: Assets\sci-fi_props_pack\textures\MATIN_Caja_1_normal.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\MATIN_Caja_1_0_baseColor.png
+    assetPath: Assets\sci-fi_props_pack\textures\MATIN_Caja_1_0_baseColor.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\MATIN_Caja_1_0_metallicRoughness.png
+    assetPath: Assets\sci-fi_props_pack\textures\MATIN_Caja_1_0_metallicRoughness.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\MATIN_Caja_1_0_emissive.png
+    assetPath: Assets\sci-fi_props_pack\textures\MATIN_Caja_1_0_emissive.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\MATIN_Caja_1_0_normal.png
+    assetPath: Assets\sci-fi_props_pack\textures\MATIN_Caja_1_0_normal.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\MATIN_Estanteria_baseColor.png
+    assetPath: Assets\sci-fi_props_pack\textures\MATIN_Estanteria_baseColor.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\MATIN_Estanteria_metallicRoughness.png
+    assetPath: Assets\sci-fi_props_pack\textures\MATIN_Estanteria_metallicRoughness.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\MATIN_Estanteria_normal.png
+    assetPath: Assets\sci-fi_props_pack\textures\MATIN_Estanteria_normal.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\MATIN_WallPanel_YR_baseColor.png
+    assetPath: Assets\sci-fi_props_pack\textures\MATIN_WallPanel_YR_baseColor.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\MATIN_WallPanel_YR_metallicRoughness.png
+    assetPath: Assets\sci-fi_props_pack\textures\MATIN_WallPanel_YR_metallicRoughness.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\MATIN_WallPanel_YR_emissive.png
+    assetPath: Assets\sci-fi_props_pack\textures\MATIN_WallPanel_YR_emissive.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\MATIN_WallPanel_YR_normal.png
+    assetPath: Assets\sci-fi_props_pack\textures\MATIN_WallPanel_YR_normal.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\MATIN_PropPar_Yellow_baseColor.png
+    assetPath: Assets\sci-fi_props_pack\textures\MATIN_PropPar_Yellow_baseColor.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\MATIN_PropPar_Yellow_metallicRoughness.png
+    assetPath: Assets\sci-fi_props_pack\textures\MATIN_PropPar_Yellow_metallicRoughness.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\MATIN_PropPar_Yellow_emissive.png
+    assetPath: Assets\sci-fi_props_pack\textures\MATIN_PropPar_Yellow_emissive.png
+  - type: 1
+    originalUri: Assets\sci-fi_props_pack\textures\MATIN_PropPar_Yellow_normal.png
+    assetPath: Assets\sci-fi_props_pack\textures\MATIN_PropPar_Yellow_normal.png
+  reportItems: []
