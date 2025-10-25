@@ -1,0 +1,11 @@
+Model Information:
+* title:	Apartment Houses - Level One Pack
+* source:	https://sketchfab.com/3d-models/apartment-houses-level-one-pack-81155d95fd3a43b3bc01f3f4bb15582d
+* author:	MRowa (https://sketchfab.com/MRowa)
+
+Model License:
+* license type:	CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
+* requirements:	Author must be credited. Modified versions must have the same license. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Apartment Houses - Level One Pack" (https://sketchfab.com/3d-models/apartment-houses-level-one-pack-81155d95fd3a43b3bc01f3f4bb15582d) by MRowa (https://sketchfab.com/MRowa) licensed under CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
