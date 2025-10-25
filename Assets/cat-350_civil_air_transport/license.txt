@@ -1,0 +1,11 @@
+Model Information:
+* title:	CAT-350: Civil Air Transport
+* source:	https://sketchfab.com/3d-models/cat-350-civil-air-transport-ad3b03c1782940f0a9e5a2e192652dc9
+* author:	MRowa (https://sketchfab.com/MRowa)
+
+Model License:
+* license type:	CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
+* requirements:	Author must be credited. Modified versions must have the same license. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "CAT-350: Civil Air Transport" (https://sketchfab.com/3d-models/cat-350-civil-air-transport-ad3b03c1782940f0a9e5a2e192652dc9) by MRowa (https://sketchfab.com/MRowa) licensed under CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)

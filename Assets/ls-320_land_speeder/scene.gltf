@@ -1,0 +1,893 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 681,
+      "max": [
+        0.30788466334342957,
+        0.23186174035072327,
+        0.725078821182251
+      ],
+      "min": [
+        -0.30788466334342957,
+        -0.42986828088760376,
+        0.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 8172,
+      "componentType": 5126,
+      "count": 681,
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 681,
+      "max": [
+        0.739092230796814,
+        0.8623214364051819
+      ],
+      "min": [
+        0.6690922975540161,
+        0.7923214435577393
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 1200,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 16344,
+      "componentType": 5126,
+      "count": 7171,
+      "max": [
+        0.5,
+        1.5144000053405762,
+        0.9955688118934631
+      ],
+      "min": [
+        -0.5,
+        -1.4183725118637085,
+        0.11993138492107391
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 102396,
+      "componentType": 5126,
+      "count": 7171,
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 5448,
+      "componentType": 5126,
+      "count": 7171,
+      "max": [
+        0.9822220802307129,
+        0.9819931387901306
+      ],
+      "min": [
+        0.02454245090484619,
+        0.01923537254333496
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 4800,
+      "componentType": 5125,
+      "count": 10968,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 188448,
+      "componentType": 5126,
+      "count": 888,
+      "max": [
+        3.749999761581421,
+        2.0,
+        1.9000005722045898
+      ],
+      "min": [
+        -0.2499997615814209,
+        -2.0000011920928955,
+        -0.5647212862968445
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 199104,
+      "componentType": 5126,
+      "count": 888,
+      "max": [
+        1.0,
+        1.0,
+        0.9945359230041504
+      ],
+      "min": [
+        -0.9807854890823364,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 62816,
+      "componentType": 5126,
+      "count": 888,
+      "max": [
+        0.9652037620544434,
+        0.9825000166893005
+      ],
+      "min": [
+        0.03179359436035156,
+        0.0254666805267334
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 48672,
+      "componentType": 5125,
+      "count": 1356,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 209760,
+      "componentType": 5126,
+      "count": 1038,
+      "max": [
+        1.000000238418579,
+        1.0,
+        7.999998569488525
+      ],
+      "min": [
+        -7.400003433227539,
+        -1.0000007152557373,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 222216,
+      "componentType": 5126,
+      "count": 1038,
+      "max": [
+        0.9974842667579651,
+        0.9974842667579651,
+        1.0
+      ],
+      "min": [
+        -0.9974843859672546,
+        -0.9974842667579651,
+        -0.31622883677482605
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 69920,
+      "componentType": 5126,
+      "count": 1038,
+      "max": [
+        0.9560387134552002,
+        0.856842041015625
+      ],
+      "min": [
+        0.02698540687561035,
+        0.03036344051361084
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 54096,
+      "componentType": 5125,
+      "count": 1572,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 234672,
+      "componentType": 5126,
+      "count": 888,
+      "max": [
+        3.749999761581421,
+        2.0,
+        1.9000005722045898
+      ],
+      "min": [
+        -0.2499997615814209,
+        -2.0000011920928955,
+        -0.5647212862968445
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 245328,
+      "componentType": 5126,
+      "count": 888,
+      "max": [
+        1.0,
+        1.0,
+        0.9945359230041504
+      ],
+      "min": [
+        -0.9807854890823364,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 78224,
+      "componentType": 5126,
+      "count": 888,
+      "max": [
+        0.9652037620544434,
+        0.9825000166893005
+      ],
+      "min": [
+        0.03179359436035156,
+        0.0254666805267334
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 60384,
+      "componentType": 5125,
+      "count": 1356,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 255984,
+      "componentType": 5126,
+      "count": 900,
+      "max": [
+        0.4853593707084656,
+        1.9999998807907104,
+        3.5343971252441406
+      ],
+      "min": [
+        -2.1830127239227295,
+        -2.0000009536743164,
+        -0.2478610873222351
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 266784,
+      "componentType": 5126,
+      "count": 900,
+      "max": [
+        0.9999396204948425,
+        1.0,
+        0.9999396204948425
+      ],
+      "min": [
+        -0.9999396204948425,
+        -1.0,
+        -0.9999396204948425
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 85328,
+      "componentType": 5126,
+      "count": 900,
+      "max": [
+        0.9652037620544434,
+        0.9825000166893005
+      ],
+      "min": [
+        0.03179359436035156,
+        0.0254666805267334
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 65808,
+      "componentType": 5125,
+      "count": 1356,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 277584,
+      "componentType": 5126,
+      "count": 894,
+      "max": [
+        0.4853593707084656,
+        2.000000238418579,
+        3.5343971252441406
+      ],
+      "min": [
+        -2.1830124855041504,
+        -2.0000007152557373,
+        -0.24786090850830078
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 288312,
+      "componentType": 5126,
+      "count": 894,
+      "max": [
+        0.9999396204948425,
+        1.0,
+        0.9999395608901978
+      ],
+      "min": [
+        -0.9999396204948425,
+        -1.0,
+        -0.9999395608901978
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 92528,
+      "componentType": 5126,
+      "count": 894,
+      "max": [
+        0.9652037620544434,
+        0.9825000166893005
+      ],
+      "min": [
+        0.03179359436035156,
+        0.0254666805267334
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 71232,
+      "componentType": 5125,
+      "count": 1356,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "MRowa (https://sketchfab.com/MRowa)",
+      "license": "CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)",
+      "source": "https://sketchfab.com/3d-models/ls-320-land-speeder-191732666eb7437688d6de61daa2ff06",
+      "title": "LS-320: Land Speeder"
+    },
+    "generator": "Sketchfab-12.66.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 76656,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 99680,
+      "byteOffset": 76656,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 299040,
+      "byteOffset": 176336,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 475376,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/Placeable_baseColor.png"
+    },
+    {
+      "uri": "textures/Placeable_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/Placeable_emissive.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissiveTexture": {
+        "index": 2
+      },
+      "name": "Placeable",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        },
+        "roughnessFactor": 0.8040408205773457
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "LS-320_Chair_Placeable_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "LS-320_Body_Placeable_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 5,
+            "POSITION": 4,
+            "TEXCOORD_0": 6
+          },
+          "indices": 7,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "LS-320_Wing.U.L_Placeable_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 9,
+            "POSITION": 8,
+            "TEXCOORD_0": 10
+          },
+          "indices": 11,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "LS-320_Gun_Placeable_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 13,
+            "POSITION": 12,
+            "TEXCOORD_0": 14
+          },
+          "indices": 15,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "LS-320_Wing.D.L_Placeable_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 17,
+            "POSITION": 16,
+            "TEXCOORD_0": 18
+          },
+          "indices": 19,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "LS-320_Wing.U.R_Placeable_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 21,
+            "POSITION": 20,
+            "TEXCOORD_0": 22
+          },
+          "indices": 23,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "LS-320_Wing.D.R_Placeable_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 25,
+            "POSITION": 24,
+            "TEXCOORD_0": 26
+          },
+          "indices": 27,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "f0e9001719484d17ad5c7601ebca839a.fbx"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16
+      ],
+      "matrix": [
+        100.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.629206793918314e-05,
+        -99.99999999999868,
+        0.0,
+        0.0,
+        99.99999999999868,
+        -1.629206793918314e-05,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "LandSpeeder-320"
+    },
+    {
+      "children": [
+        5
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        -2.646977960169688e-23,
+        0.0,
+        0.0,
+        2.646977960169688e-23,
+        1.0,
+        0.0,
+        0.0,
+        0.8665350675582886,
+        0.196510910987854,
+        1.0
+      ],
+      "name": "LS-320_Chair"
+    },
+    {
+      "mesh": 0,
+      "name": "LS-320_Chair_Placeable_0"
+    },
+    {
+      "children": [
+        7
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        -2.646977960169688e-23,
+        0.0,
+        0.0,
+        2.646977960169688e-23,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "LS-320_Body"
+    },
+    {
+      "mesh": 1,
+      "name": "LS-320_Body_Placeable_0"
+    },
+    {
+      "children": [
+        9
+      ],
+      "matrix": [
+        0.1732050560712301,
+        0.0,
+        0.09999998911263287,
+        0.0,
+        0.0,
+        0.19999998807907104,
+        0.0,
+        0.0,
+        -0.09999998911263287,
+        0.0,
+        0.1732050560712301,
+        0.0,
+        0.15000008046627045,
+        -0.2999999523162842,
+        0.6000000238418579,
+        1.0
+      ],
+      "name": "LS-320_Wing.U.L"
+    },
+    {
+      "mesh": 2,
+      "name": "LS-320_Wing.U.L_Placeable_0"
+    },
+    {
+      "children": [
+        11
+      ],
+      "matrix": [
+        0.050000011920928955,
+        1.1102234216718826e-17,
+        -1.1102234216718824e-17,
+        0.0,
+        1.1102236025502219e-17,
+        -8.146035911757415e-09,
+        0.050000011920928296,
+        0.0,
+        1.1102232407935136e-17,
+        -0.050000011920928296,
+        -8.146035911757415e-09,
+        0.0,
+        0.16000011563301086,
+        -1.0999999046325684,
+        0.5,
+        1.0
+      ],
+      "name": "LS-320_Gun"
+    },
+    {
+      "mesh": 3,
+      "name": "LS-320_Gun_Placeable_0"
+    },
+    {
+      "children": [
+        13
+      ],
+      "matrix": [
+        0.17320505607122944,
+        1.5142067477952464e-08,
+        -0.09999998911263286,
+        -0.0,
+        -1.748455491875223e-08,
+        0.19999998807907024,
+        -6.617444505993769e-25,
+        -0.0,
+        -0.09999998911263246,
+        -8.742277028652589e-09,
+        -0.17320505607123013,
+        -0.0,
+        0.15000008046627045,
+        -0.2999999523162842,
+        0.40000003576278687,
+        1.0
+      ],
+      "name": "LS-320_Wing.D.L"
+    },
+    {
+      "mesh": 4,
+      "name": "LS-320_Wing.D.L_Placeable_0"
+    },
+    {
+      "children": [
+        15
+      ],
+      "matrix": [
+        0.1732050560712301,
+        0.0,
+        0.09999998911263287,
+        0.0,
+        0.0,
+        0.19999998807907104,
+        0.0,
+        0.0,
+        -0.09999998911263287,
+        0.0,
+        0.1732050560712301,
+        0.0,
+        -0.14999999105930328,
+        -0.2999999225139618,
+        0.5999999642372131,
+        1.0
+      ],
+      "name": "LS-320_Wing.U.R"
+    },
+    {
+      "mesh": 5,
+      "name": "LS-320_Wing.U.R_Placeable_0"
+    },
+    {
+      "children": [
+        17
+      ],
+      "matrix": [
+        0.17320505607122944,
+        1.5142067477952464e-08,
+        -0.09999998911263286,
+        -0.0,
+        -1.748455491875223e-08,
+        0.19999998807907024,
+        -6.617444505993769e-25,
+        -0.0,
+        -0.09999998911263246,
+        -8.742277028652589e-09,
+        -0.17320505607123013,
+        -0.0,
+        -0.15000002086162567,
+        -0.30000001192092896,
+        0.3999999761581421,
+        1.0
+      ],
+      "name": "LS-320_Wing.D.R"
+    },
+    {
+      "mesh": 6,
+      "name": "LS-320_Wing.D.R_Placeable_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9728,
+      "minFilter": 9728,
+      "wrapS": 10497,
+      "wrapT": 10497
+    },
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 1,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    }
+  ]
+}
