@@ -1,0 +1,11 @@
+Model Information:
+* title:	Coal Power Station
+* source:	https://sketchfab.com/3d-models/coal-power-station-f503dffe366648a58e565e6b3bee4583
+* author:	MRowa (https://sketchfab.com/MRowa)
+
+Model License:
+* license type:	CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
+* requirements:	Author must be credited. Modified versions must have the same license. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Coal Power Station" (https://sketchfab.com/3d-models/coal-power-station-f503dffe366648a58e565e6b3bee4583) by MRowa (https://sketchfab.com/MRowa) licensed under CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)

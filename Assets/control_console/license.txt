@@ -1,0 +1,11 @@
+Model Information:
+* title:	Control Console
+* source:	https://sketchfab.com/3d-models/control-console-e741d4c2962a48dda7b987cefe6a3b51
+* author:	MRowa (https://sketchfab.com/MRowa)
+
+Model License:
+* license type:	CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
+* requirements:	Author must be credited. Modified versions must have the same license. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Control Console" (https://sketchfab.com/3d-models/control-console-e741d4c2962a48dda7b987cefe6a3b51) by MRowa (https://sketchfab.com/MRowa) licensed under CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)

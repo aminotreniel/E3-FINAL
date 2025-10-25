@@ -1,0 +1,11 @@
+Model Information:
+* title:	Geothermal Power Station
+* source:	https://sketchfab.com/3d-models/geothermal-power-station-661ad6e281344ab9a9751124ee793d56
+* author:	MRowa (https://sketchfab.com/MRowa)
+
+Model License:
+* license type:	CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
+* requirements:	Author must be credited. Modified versions must have the same license. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Geothermal Power Station" (https://sketchfab.com/3d-models/geothermal-power-station-661ad6e281344ab9a9751124ee793d56) by MRowa (https://sketchfab.com/MRowa) licensed under CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)

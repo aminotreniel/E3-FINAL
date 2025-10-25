@@ -1,0 +1,11 @@
+Model Information:
+* title:	Sci-Fi Turret
+* source:	https://sketchfab.com/3d-models/sci-fi-turret-212922522bc34e32878abe73579c4927
+* author:	3D Wizard (https://sketchfab.com/3DGandalf)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Sci-Fi Turret" (https://sketchfab.com/3d-models/sci-fi-turret-212922522bc34e32878abe73579c4927) by 3D Wizard (https://sketchfab.com/3DGandalf) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
