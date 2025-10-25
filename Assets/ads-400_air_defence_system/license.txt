@@ -1,0 +1,11 @@
+Model Information:
+* title:	ADS-400: Air Defence System
+* source:	https://sketchfab.com/3d-models/ads-400-air-defence-system-56b5b62835bf40cd8f506d69f21f0323
+* author:	MRowa (https://sketchfab.com/MRowa)
+
+Model License:
+* license type:	CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
+* requirements:	Author must be credited. Modified versions must have the same license. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "ADS-400: Air Defence System" (https://sketchfab.com/3d-models/ads-400-air-defence-system-56b5b62835bf40cd8f506d69f21f0323) by MRowa (https://sketchfab.com/MRowa) licensed under CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
